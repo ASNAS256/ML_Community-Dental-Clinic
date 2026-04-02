@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+    <h2><i class="fa-solid fa-user-pen"></i> Edit Patient</h2>
+
+    <form method="POST" class="form-grid">
+        <input name="full_name" value="{{ patient.full_name }}">
+        <input type="date" name="dob" value="{{ patient.dob.strftime('%Y-%m-%d') }}">
+
+        <select name="sex">
+            <option {{ 'selected' if patient.sex=='Male' else '' }}>Male</option>
+            <option {{ 'selected' if patient.sex=='Female' else '' }}>Female</option>
+        </select>
+
+        <input name="phone" value="{{ patient.phone }}">
+        <input name="address" value="{{ patient.address }}">
+
+        <input name="village" value="{{ patient.village }}">
+        <input name="parish" value="{{ patient.parish }}">
+        <input name="sub_county" value="{{ patient.sub_county }}">
+
+        <input name="occupation" value="{{ patient.occupation }}">
+        <input name="insurance_status" value="{{ patient.insurance_status }}">
+        <input name="next_of_kin" value="{{ patient.next_of_kin }}">
+
+        <button type="submit" class="btn primary">
+            <i class="fa-solid fa-pen"></i> Update Patient
+        </button>
+    </form>
+</div>
+
+{% endblock %}

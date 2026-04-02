@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="header-row">
+    <h2><i class="fa-solid fa-users"></i> Patients</h2>
+    <a href="/patients/add" class="btn primary">
+        <i class="fa-solid fa-user-plus"></i> Add Patient
+    </a>
+</div>
+
+<form method="GET" class="search-box">
+    <input type="text" name="search" placeholder="Search patients...">
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Sex</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for p in patients %}
+        <tr>
+            <td>{{ p.patient_id }}</td>
+            <td>{{ p.full_name }}</td>
+            <td>{{ p.sex }}</td>
+            <td>{{ p.phone }}</td>
+            <td>
+                <a href="/patients/edit/{{ p.id }}" class="btn small edit">
+                    <i class="fa fa-edit"></i>
+                </a>
+                <a href="/patients/delete/{{ p.id }}" class="btn small danger">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

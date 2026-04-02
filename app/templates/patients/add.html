@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card form-container">
+    <div class="form-header">
+        <h2><i class="fa-solid fa-user-plus"></i> Add Patient</h2>
+    </div>
+
+    <form method="POST" class="form-grid">
+
+        <!-- PERSONAL INFO -->
+        <div class="form-section full">
+            <h4>Personal Information</h4>
+        </div>
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input name="full_name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Date of Birth</label>
+            <input type="date" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label>Sex</label>
+            <select name="sex">
+                <option value="">Select</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Phone</label>
+            <input name="phone">
+        </div>
+
+        <!-- LOCATION -->
+        <div class="form-section full">
+            <h4>Location Details</h4>
+        </div>
+
+        <div class="form-group full">
+            <label>Address</label>
+            <input name="address">
+        </div>
+
+        <div class="form-group">
+            <label>Village</label>
+            <input name="village">
+        </div>
+
+        <div class="form-group">
+            <label>Parish</label>
+            <input name="parish">
+        </div>
+
+        <div class="form-group">
+            <label>Sub County</label>
+            <input name="sub_county">
+        </div>
+
+        <!-- OTHER INFO -->
+        <div class="form-section full">
+            <h4>Additional Information</h4>
+        </div>
+
+        <div class="form-group">
+            <label>Occupation</label>
+            <input name="occupation">
+        </div>
+
+        <div class="form-group">
+            <label>Insurance Status</label>
+            <input name="insurance_status">
+        </div>
+
+        <div class="form-group full">
+            <label>Next of Kin</label>
+            <input name="next_of_kin">
+        </div>
+
+        <!-- BUTTON -->
+        <div class="form-actions full">
+            <button type="submit" class="btn primary">
+                <i class="fa-solid fa-save"></i> Save Patient
+            </button>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
